@@ -3,6 +3,7 @@
   max-width: 500px;
   border: 1px solid lightgrey;
   margin-bottom: 40px;
+  box-shadow: 0px 5px 10px rgba(10, 0, 000, 0.3);
 }
 
 .post__image {

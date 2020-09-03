@@ -264,7 +264,9 @@ function App() {
           display: "flex",
           justifyContent: "center",
           border: "1px solid lightgrey",
+          boxShadow: "0px -5px 10px rgba(10, 0, 000, 0.3)",
         }}
+        // className="addPost"
       >
         <Button onClick={() => setAddPost(true)}>
           <BiImageAdd style={{ fontSize: "1.5rem", padding: "5px 0 5px 0" }} />
