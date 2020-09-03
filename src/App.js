@@ -210,18 +210,6 @@ function App() {
 
       {/* Posts */}
       <div className="app__posts">
-        <div className="app__postsLeft">
-          {posts.map(({ id, post }) => (
-            <Post
-              key={id}
-              postId={id}
-              user={user}
-              userName={post.username}
-              caption={post.caption}
-              imgUrl={post.imageUrl}
-            />
-          ))}
-        </div>
         <div className="app__postsRight">
           <InstagramEmbed
             url="https://www.instagram.com/p/B-_f1HHnxID/"
@@ -235,6 +223,18 @@ function App() {
             onAfterRender={() => {}}
             onFailure={() => {}}
           />
+        </div>
+        <div className="app__postsLeft">
+          {posts.map(({ id, post }) => (
+            <Post
+              key={id}
+              postId={id}
+              user={user}
+              userName={post.username}
+              caption={post.caption}
+              imgUrl={post.imageUrl}
+            />
+          ))}
         </div>
       </div>
 

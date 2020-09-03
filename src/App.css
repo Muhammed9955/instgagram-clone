@@ -78,3 +78,10 @@
 .app__postsRight {
   margin-left: 10px;
 }
+@media all and (max-width: 600px) {
+  .app__posts {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
