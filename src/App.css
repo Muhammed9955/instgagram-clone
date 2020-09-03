@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,46 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  margin: 0;
+}
+.app__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  object-fit: contain;
+  background-color: white;
+  padding: 20px;
+  border-bottom: 1px solid lightgrey;
+  height: 4vh;
+  /* margin-bottom: 20px; */
+  display: flex;
+  justify-content: space-between;
+}
+.app {
+  background-color: #fafafa;
+  height: 100vh;
+}
+.app__headerImage {
+  height: 5vh;
+  object-fit: contain;
+}
+
+.app__signup {
+  display: flex;
+  flex-direction: column;
+  /* text-l */
+}
+.app__loginContianer {
+  display: flex;
+}
+.app__posts {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.app__postsRight {
+  margin-left: 10px;
 }

@@ -1,0 +1,14 @@
+.imageUplaod {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10x;
+  margin-bottom: 10x;
+  /* position: fixed; */
+  bottom: 0;
+}
+.imageUplaod__progress {
+  width: 100%;
+}
