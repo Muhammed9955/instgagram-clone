@@ -9,6 +9,7 @@ import { Button, Input } from "@material-ui/core";
 import ImageUpload from "./ImageUpload";
 // import InstagramEmbed from "react-instagram-embed";
 import { BiImageAdd } from "react-icons/bi";
+import { IoIosCloseCircle } from "react-icons/io";
 
 function getModalStyle() {
   const top = 50;
@@ -249,6 +250,11 @@ function App() {
       >
         <div style={modalStyle} className={classes.paper}>
           <center style={{ padding: "10px" }}>
+            <div style={{ margin: "0 80% 0 " }}>
+              <Button onClick={() => setAddPost(false)}>
+                <IoIosCloseCircle style={{ fontSize: "2rem" }} />
+              </Button>
+            </div>
             {user?.displayName ? (
               <ImageUpload userName={user.displayName} />
             ) : (
