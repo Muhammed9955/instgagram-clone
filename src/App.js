@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button, Input } from "@material-ui/core";
 import ImageUpload from "./ImageUpload";
 // import InstagramEmbed from "react-instagram-embed";
+import { BiImageAdd } from "react-icons/bi";
 
 function getModalStyle() {
   const top = 50;
@@ -34,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [posts, setPosts] = useState([]);
+  const [addPost, setAddPost] = useState(false);
   const [open, setOpen] = useState(false);
   const [openSignin, setOpenSignin] = useState(false);
   const [modalStyle] = useState(getModalStyle);
@@ -239,14 +241,36 @@ function App() {
         </div> */}
       </div>
 
-      {user?.displayName ? (
-        <ImageUpload userName={user.displayName} />
-      ) : (
-        <center>
-          <h3 className="sorryMsg">Sorry you need to login to uplaod</h3>
-        </center>
-      )}
-      {/* Posts */}
+      <Modal
+        open={addPost}
+        onClose={() => setOpenSignin(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <div style={modalStyle} className={classes.paper}>
+          <center style={{ padding: "10px" }}>
+            {user?.displayName ? (
+              <ImageUpload userName={user.displayName} />
+            ) : (
+              <center>
+                <h3 className="sorryMsg">Sorry you need to login to uplaod</h3>
+              </center>
+            )}
+          </center>
+        </div>
+      </Modal>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          border: "1px solid lightgrey",
+        }}
+      >
+        <Button onClick={() => setAddPost(true)}>
+          <BiImageAdd style={{ fontSize: "1.5rem", padding: "5px 0 5px 0" }} />
+          Add Post
+        </Button>
+      </div>
     </div>
   );
 }
