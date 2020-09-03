@@ -7,7 +7,7 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Input } from "@material-ui/core/";
 import ImageUpload from "./ImageUpload";
-import InstagramEmbed from "react-instagram-embed";
+// import InstagramEmbed from "react-instagram-embed";
 
 function getModalStyle() {
   const top = 50;
@@ -210,7 +210,20 @@ function App() {
 
       {/* Posts */}
       <div className="app__posts">
-        <div className="app__postsRight">
+        <div className=" app__postsRight">
+          {posts.map(({ id, post }) => (
+            <Post
+              key={id}
+              postId={id}
+              user={user}
+              userName={post.username}
+              caption={post.caption}
+              imgUrl={post.imageUrl}
+            />
+          ))}
+        </div>
+
+        {/* <div className="app__postsLeft ">
           <InstagramEmbed
             url="https://www.instagram.com/p/B-_f1HHnxID/"
             maxWidth={320}
@@ -223,25 +236,15 @@ function App() {
             onAfterRender={() => {}}
             onFailure={() => {}}
           />
-        </div>
-        <div className="app__postsLeft">
-          {posts.map(({ id, post }) => (
-            <Post
-              key={id}
-              postId={id}
-              user={user}
-              userName={post.username}
-              caption={post.caption}
-              imgUrl={post.imageUrl}
-            />
-          ))}
-        </div>
+        </div> */}
       </div>
 
       {user?.displayName ? (
         <ImageUpload userName={user.displayName} />
       ) : (
-        <h3>Sorry you need to login to uplaod</h3>
+        <center>
+          <h3 className="sorryMsg">Sorry you need to login to uplaod</h3>
+        </center>
       )}
       {/* Posts */}
     </div>
