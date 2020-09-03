@@ -78,7 +78,7 @@
 .app__postsRight {
   margin-left: 10px;
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   .app__posts {
     padding: 20px;
     display: flex;
