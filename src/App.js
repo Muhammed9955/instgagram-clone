@@ -265,6 +265,11 @@ function App() {
           justifyContent: "center",
           border: "1px solid lightgrey",
           boxShadow: "0px -5px 10px rgba(10, 0, 000, 0.3)",
+          position: "fixed",
+          bottom: 0,
+          zIndex: 2,
+          backgroundColor: "white",
+          width: "100%",
         }}
         // className="addPost"
       >
