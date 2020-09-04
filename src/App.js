@@ -70,7 +70,14 @@ function App() {
   // const handleLogin = (e) => {};
   const signUp = (event) => {
     event.preventDefault();
-    if (repeate_password === password) {
+    if (
+      email.length == 0 ||
+      password.length == 0 ||
+      userName.length == 0 ||
+      repeate_password.length == 0
+    ) {
+      alert("Error, one or more fields can't be empty");
+    } else if (repeate_password === password) {
       auth
         .createUserWithEmailAndPassword(email, password)
         .then((authUser) => {
@@ -80,6 +87,8 @@ function App() {
         })
         .catch((error) => alert(error.message));
       setOpen(false);
+    } else {
+      alert("Error, password is not matched");
     }
   };
   const signIn = (event) => {
