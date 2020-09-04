@@ -44,9 +44,10 @@ function App() {
     userName: "",
     email: "",
     password: "",
+    repeate_password: "",
   });
   const [user, setUser] = useState(null);
-  const { email, password, userName } = formData;
+  const { email, password, userName, repeate_password } = formData;
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -69,15 +70,17 @@ function App() {
   // const handleLogin = (e) => {};
   const signUp = (event) => {
     event.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        return authUser.user.updateProfile({
-          displayName: userName,
-        });
-      })
-      .catch((error) => alert(error.message));
-    setOpen(false);
+    if (repeate_password === password) {
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((authUser) => {
+          return authUser.user.updateProfile({
+            displayName: userName,
+          });
+        })
+        .catch((error) => alert(error.message));
+      setOpen(false);
+    }
   };
   const signIn = (event) => {
     event.preventDefault();
@@ -145,6 +148,14 @@ function App() {
               value={password}
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
+              }
+            />
+            <Input
+              placeholder="REPEATE PASSWORD"
+              type="Password"
+              value={repeate_password}
+              onChange={(e) =>
+                setFormData({ ...formData, repeate_password: e.target.value })
               }
             />
 
@@ -244,7 +255,7 @@ function App() {
 
       <Modal
         open={addPost}
-        onClose={() => setOpenSignin(false)}
+        onClose={() => setAddPost(false)}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >

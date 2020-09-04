@@ -54,13 +54,14 @@ function ImageUpload({ userName }) {
   return (
     <div className="imageUplaod">
       <progress
-        className="imageUplaod__progress  "
+        className="imageUplaod__progress p "
         value={progress}
         max="100"
       />
+
       <input
         type="text"
-        placeholder="Enter a caption"
+        placeholder="Enter a caption or description "
         onChange={(e) => setCaption(e.target.value)}
         value={caption}
         className="p"
