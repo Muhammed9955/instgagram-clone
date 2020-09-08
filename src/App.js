@@ -71,10 +71,10 @@ function App() {
   const signUp = (event) => {
     event.preventDefault();
     if (
-      email.length == 0 ||
-      password.length == 0 ||
-      userName.length == 0 ||
-      repeate_password.length == 0
+      email.length === 0 ||
+      password.length === 0 ||
+      userName.length === 0 ||
+      repeate_password.length === 0
     ) {
       alert("Error, one or more fields can't be empty");
     } else if (repeate_password === password) {
